@@ -30,7 +30,7 @@ public class main {
 
                 try (Connection connection = DriverManager.getConnection(url, user, pass)) {
                     String sql = "INSERT INTO `crud`.`people` (`id`, `status`, `Name`, `Experience`, `Education`, `Departament`) \" +\n" +
-                            "                        \"VALUES ('?', '?', '?', '?', '?', '?')";
+                            "                        \"VALUES (?, ?, ?, ?, ?, ?)";
                     PreparedStatement preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setInt(1, worker.id);
                     preparedStatement.setString(2, worker.status);
